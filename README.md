@@ -1,130 +1,127 @@
-# 🚀 Neovim Java Development Setup
+# Neovim Java Development Setup
 
 A modern Neovim configuration powered by Lazy.nvim for Java and general development.
 
 ---
 
-# ✨ Features
+## Features
 
-- ☕ Java development using JDTLS
-- ⚡ Fast plugin management with Lazy.nvim
-- 🔍 Telescope fuzzy finder
-- 📁 NvimTree file explorer
-- 🧠 IntelliSense-like autocompletion
-- 🎨 Transparent UI
-- ✨ Smear cursor animation
-- 📦 Lombok support
-- 🔄 Auto organize imports
-- ⌨️ VSCode-like workflow
+- Java development using JDTLS
+- Fast plugin management with Lazy.nvim
+- Telescope fuzzy finder
+- NvimTree file explorer
+- IntelliSense-like autocompletion
+- Transparent UI
+- Smear cursor animation
+- Lombok support
+- Auto organize imports
+- VSCode-like workflow
 
 ---
 
-# 📦 Requirements
+## Requirements
 
-Install these packages first.
+Install these packages before proceeding.
 
-## Ubuntu / Debian
+### Ubuntu / Debian
 
-```bash
+ bash
 sudo apt update
-
 sudo apt install neovim git openjdk-17-jdk maven unzip curl build-essential wget
-```
+ 
 
 ---
 
-# 📁 Create Neovim Config Folder
+## Create Neovim Config Folder
 
-```bash
+ bash
 mkdir -p ~/.config/nvim
-```
+ 
 
-Move into directory:
+Move into the directory:
 
-```bash
+ bash
 cd ~/.config/nvim
-```
+ 
 
 ---
 
-# 📝 Create init.lua
+## Create init.lua
 
-```bash
+ bash
 touch init.lua
-```
+ 
 
-Open file:
+Open the file:
 
-```bash
+ bash
 nvim init.lua
-```
+ 
 
 Paste your Neovim configuration into `init.lua`.
 
-Save file:
+Save the file:
 
-```vim
+ vim
 :w
-```
+ 
 
 Exit:
 
-```vim
+ vim
 :q
-```
+ 
 
 ---
 
-# ⚡ Start Neovim
+## Start Neovim
 
-```bash
+ bash
 nvim
-```
+ 
 
-Lazy.nvim will automatically install plugins.
-
-Wait until installation finishes.
+Lazy.nvim will automatically install all plugins. Wait until the installation finishes before proceeding.
 
 ---
 
-# ☕ Install Java JDTLS
+## Install Java JDTLS
 
-Create JDTLS directory:
+Create the JDTLS directory:
 
-```bash
+ bash
 mkdir -p ~/.local/share/jdtls
-```
+ 
 
-Move into directory:
+Move into the directory:
 
-```bash
+ bash
 cd ~/.local/share/jdtls
-```
+ 
 
 Download JDTLS:
 
-```bash
+ bash
 wget https://download.eclipse.org/jdtls/snapshots/jdt-language-server-latest.tar.gz
-```
+ 
 
-Extract archive:
+Extract the archive:
 
-```bash
+ bash
 tar -xvf jdt-language-server-latest.tar.gz
-```
+ 
 
-Folder structure:
+Expected folder structure:
 
-```bash
+ 
 ~/.local/share/jdtls/
 ├── config_linux
 ├── plugins
 └── features
-```
+ 
 
 ---
 
-# 🔤 Install Nerd Font
+## Install Nerd Font
 
 Recommended fonts:
 
@@ -134,62 +131,57 @@ Recommended fonts:
 After installation:
 
 1. Open terminal settings
-2. Change terminal font
-3. Select Nerd Font
+2. Navigate to font preferences
+3. Select your chosen Nerd Font
 
 ---
 
-# 📦 Lombok Support (Optional)
+## Lombok Support (Optional)
 
-Lombok is automatically detected from Maven repository.
+Lombok is automatically detected from the Maven repository. Add the following dependency to your Java project:
 
-Add dependency to your Java project:
-
-```xml
+ xml
 <dependency>
     <groupId>org.projectlombok</groupId>
     <artifactId>lombok</artifactId>
     <version>latest</version>
 </dependency>
-```
+ 
 
 ---
 
-# 🚀 Start Java Project
+## Start a Java Project
 
-Create project:
+Create a new project directory:
 
-```bash
+ bash
 mkdir demo-project
-
 cd demo-project
-```
+ 
 
-Open with Neovim:
+Open it with Neovim:
 
-```bash
+ bash
 nvim .
-```
+ 
 
-JDTLS will automatically start.
+JDTLS will automatically start when a valid Java project is detected.
 
 ---
 
-# ⌨️ Keymaps
+## Keymaps
 
-## General
+### General
 
 | Key | Action |
 |---|---|
 | `jk` | Exit insert mode |
 | `<leader>w` | Save file |
 | `<leader>q` | Quit |
-| `<leader>h` | Clear search |
+| `<leader>h` | Clear search highlight |
 | `<leader>e` | Toggle file explorer |
 
----
-
-## Telescope
+### Telescope
 
 | Key | Action |
 |---|---|
@@ -199,9 +191,7 @@ JDTLS will automatically start.
 | `<leader>fh` | Help tags |
 | `<leader>fr` | Recent files |
 
----
-
-## Java JDTLS
+### Java (JDTLS)
 
 | Key | Action |
 |---|---|
@@ -212,83 +202,78 @@ JDTLS will automatically start.
 
 ---
 
-# 🔌 Plugins
+## Plugins
 
-- lazy.nvim
-- nvim-lspconfig
-- nvim-jdtls
-- nvim-cmp
-- LuaSnip
-- telescope.nvim
-- nvim-tree.lua
-- smear-cursor.nvim
+| Plugin | Purpose |
+|---|---|
+| lazy.nvim | Plugin manager |
+| nvim-lspconfig | LSP configuration |
+| nvim-jdtls | Java language server |
+| nvim-cmp | Autocompletion engine |
+| LuaSnip | Snippet support |
+| telescope.nvim | Fuzzy finder |
+| nvim-tree.lua | File explorer |
+| smear-cursor.nvim | Cursor animation |
 
 ---
 
-# 🖥️ Recommended Terminal
+## Recommended Terminals
 
 - Kitty
 - WezTerm
 - Alacritty
 
-Enable transparency for best experience.
+Enable transparency in your terminal settings for the best visual experience.
 
 ---
 
-# 🛠️ Troubleshooting
+## Troubleshooting
 
-## JDTLS Not Starting
+### JDTLS Not Starting
 
-Check Java version:
+Check your Java version:
 
-```bash
+ bash
 java --version
-```
+ 
 
-Make sure:
+Ensure the following conditions are met:
 
-- JDK 17+ installed
-- `config_linux` exists
-- Project contains:
+- JDK 17 or higher is installed
+- The `config_linux` directory exists under `~/.local/share/jdtls/`
+- The project root contains at least one of the following:
   - `.git`
   - `pom.xml`
   - `gradlew`
   - `mvnw`
 
----
+### Telescope FZF Not Working
 
-## Telescope FZF Not Working
+Build the extension manually:
 
-Build extension manually:
-
-```bash
+ bash
 cd ~/.local/share/nvim/lazy/telescope-fzf-native.nvim
-
 make
-```
+ 
 
 ---
 
-# 📁 Folder Structure
+## Folder Structure
 
-```bash
+Current structure:
+
+ 
 ~/.config/nvim/
 └── init.lua
-```
+ 
 
-Future structure:
+Recommended future structure:
 
-```bash
+ 
 lua/
 ├── config/
 ├── plugins/
 ├── lsp/
 ├── keymaps/
 └── settings/
-```
-
----
-
-# 📜 License
-
-MIT
+ 
