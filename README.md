@@ -2,7 +2,7 @@
 
 A modern Neovim configuration powered by Lazy.nvim for Java and general development.
 
----
+ 
 
 ## Features
 
@@ -17,7 +17,7 @@ A modern Neovim configuration powered by Lazy.nvim for Java and general developm
 - Auto organize imports
 - VSCode-like workflow
 
----
+ 
 
 ## Requirements
 
@@ -25,101 +25,101 @@ Install these packages before proceeding.
 
 ### Ubuntu / Debian
 
- bash
+```bash
 sudo apt update
 sudo apt install neovim git openjdk-17-jdk maven unzip curl build-essential wget
- 
+```
 
----
+ 
 
 ## Create Neovim Config Folder
 
- bash
+```bash
 mkdir -p ~/.config/nvim
- 
+```
 
 Move into the directory:
 
- bash
+```bash
 cd ~/.config/nvim
- 
+```
 
----
+ 
 
 ## Create init.lua
 
- bash
+```bash
 touch init.lua
- 
+```
 
 Open the file:
 
- bash
+```bash
 nvim init.lua
- 
+```
 
 Paste your Neovim configuration into `init.lua`.
 
 Save the file:
 
- vim
+```vim
 :w
- 
+```
 
 Exit:
 
- vim
+```vim
 :q
- 
+```
 
----
+ 
 
 ## Start Neovim
 
- bash
+```bash
 nvim
- 
+```
 
 Lazy.nvim will automatically install all plugins. Wait until the installation finishes before proceeding.
 
----
+ 
 
 ## Install Java JDTLS
 
 Create the JDTLS directory:
 
- bash
+```bash
 mkdir -p ~/.local/share/jdtls
- 
+```
 
 Move into the directory:
 
- bash
+```bash
 cd ~/.local/share/jdtls
- 
+```
 
 Download JDTLS:
 
- bash
+```bash
 wget https://download.eclipse.org/jdtls/snapshots/jdt-language-server-latest.tar.gz
- 
+```
 
 Extract the archive:
 
- bash
+```bash
 tar -xvf jdt-language-server-latest.tar.gz
- 
+```
 
 Expected folder structure:
 
- 
+```
 ~/.local/share/jdtls/
 ├── config_linux
 ├── plugins
 └── features
- 
+```
 
----
+ 
 
 ## Install Nerd Font
 
@@ -134,47 +134,47 @@ After installation:
 2. Navigate to font preferences
 3. Select your chosen Nerd Font
 
----
+ 
 
 ## Lombok Support (Optional)
 
 Lombok is automatically detected from the Maven repository. Add the following dependency to your Java project:
 
- xml
+```xml
 <dependency>
     <groupId>org.projectlombok</groupId>
     <artifactId>lombok</artifactId>
     <version>latest</version>
 </dependency>
- 
+```
 
----
+ 
 
 ## Start a Java Project
 
 Create a new project directory:
 
- bash
+```bash
 mkdir demo-project
 cd demo-project
- 
+```
 
 Open it with Neovim:
 
- bash
+```bash
 nvim .
- 
+```
 
 JDTLS will automatically start when a valid Java project is detected.
 
----
+ 
 
 ## Keymaps
 
 ### General
 
 | Key | Action |
-|---|---|
+| | |
 | `jk` | Exit insert mode |
 | `<leader>w` | Save file |
 | `<leader>q` | Quit |
@@ -184,7 +184,7 @@ JDTLS will automatically start when a valid Java project is detected.
 ### Telescope
 
 | Key | Action |
-|---|---|
+| | |
 | `<leader>ff` | Find files |
 | `<leader>fg` | Live grep |
 | `<leader>fb` | Buffers |
@@ -194,18 +194,18 @@ JDTLS will automatically start when a valid Java project is detected.
 ### Java (JDTLS)
 
 | Key | Action |
-|---|---|
+| | |
 | `<leader>oi` | Organize imports |
 | `<leader>ev` | Extract variable |
 | `<leader>ec` | Extract constant |
 | `<leader>tm` | Test nearest method |
 
----
+ 
 
 ## Plugins
 
 | Plugin | Purpose |
-|---|---|
+| | |
 | lazy.nvim | Plugin manager |
 | nvim-lspconfig | LSP configuration |
 | nvim-jdtls | Java language server |
@@ -215,7 +215,7 @@ JDTLS will automatically start when a valid Java project is detected.
 | nvim-tree.lua | File explorer |
 | smear-cursor.nvim | Cursor animation |
 
----
+ 
 
 ## Recommended Terminals
 
@@ -225,7 +225,7 @@ JDTLS will automatically start when a valid Java project is detected.
 
 Enable transparency in your terminal settings for the best visual experience.
 
----
+ 
 
 ## Troubleshooting
 
@@ -233,9 +233,9 @@ Enable transparency in your terminal settings for the best visual experience.
 
 Check your Java version:
 
- bash
+```bash
 java --version
- 
+```
 
 Ensure the following conditions are met:
 
@@ -251,29 +251,28 @@ Ensure the following conditions are met:
 
 Build the extension manually:
 
- bash
+```bash
 cd ~/.local/share/nvim/lazy/telescope-fzf-native.nvim
 make
- 
+```
 
----
 
 ## Folder Structure
 
 Current structure:
 
- 
+```
 ~/.config/nvim/
 └── init.lua
- 
+```
 
 Recommended future structure:
 
- 
+```
 lua/
 ├── config/
 ├── plugins/
 ├── lsp/
 ├── keymaps/
 └── settings/
- 
+```
